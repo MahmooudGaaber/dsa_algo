@@ -17,13 +17,40 @@ public class App {
             }
         }
     }
+
+    // * code of Binary Search
+    static void doBinarySearch(int[] dataArray, int target){
+        int start = 0;
+        int end = dataArray.length;
+        int mid = ( start + end) / 2 ;
+      while (
+              start <= end
+      ){
+          if ( target == dataArray[mid]){
+              System.out.println("Data Find In Index : "+mid);
+              return;
+          } else if ( target > dataArray[mid] ){
+              start = mid ;
+              mid = ( start + end) / 2 ;
+          } else if (target < dataArray[mid]) {
+              end = mid ;
+              mid = ( start + end) / 2 ;
+          }
+          if(target > dataArray[dataArray.length-1]){
+              System.out.println("Data Not Exist");
+              return;
+          }
+      }
+    }
     
     public static void main(String[] args) throws Exception {
 
-        // ? Call Linear Search Method
         int[] linearData = new int[]{1, 2, 3, 4, 5};
-        doLinearSearch(linearData,2);
+        // ? Call Linear Search Method
+         doLinearSearch(linearData,2);
 
+         // ? call Binary search Method
+        doBinarySearch(linearData,9);
 
     }
 
