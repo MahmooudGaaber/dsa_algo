@@ -5,16 +5,15 @@ public class App {
     static void doLinearSearch(int[] dataArray, int target){
         // * Loop to go throw all items on List
        for (int i = 0 ; i < dataArray.length ; i ++ ){
+
            // * checked the data if found and print it and stop app then
             if (dataArray[i] == target) {
                 System.out.println("Found It" + i);
                 return;
             }
+
             // * checked the data if Not found
-            else {
-                System.out.println("Not Found It");
-                return;
-            }
+           System.out.println("Not Found It");
         }
     }
 
