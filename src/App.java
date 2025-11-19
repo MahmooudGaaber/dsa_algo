@@ -39,22 +39,67 @@ public class App {
 
         System.out.println("Data Not Exist");
     }
-    
-    public static void main(String[] args) throws Exception {
 
-        // ? initialize array for testing
-        int[] linearData = new int[]{1, 2, 3, 4, 5};
+    // * code of Bubble Sort
+    static void doBubbleSort (int[] dataArray ){
+
+        int arraySize = dataArray.length;
+        int temp = 0 ;
+
+        //! Printing data before Sorting
+        System.out.println("List Before Sorting");
+        for(int item : dataArray ){
+            System.out.print(item + "");
+        }
+        System.out.println("");
 
 
-        // ? Call Linear Search Method
-         doLinearSearch(linearData,2);
+        //! Looping On Array Itemsعلي
+        //! first Item in Array
+        for (int i = 0 ; i < arraySize ; i ++) {
+            //! Loop On Items After Selected Items
+            for (int j = 0 ; j < arraySize-1 ; j++) {
+                //! create a temp var to use it in swap
 
-         // ? call Binary search Method
-        doBinarySearch(linearData,9);
+                if(dataArray[j] > dataArray[j+1]){
+                    //! swap in order
+                    temp = dataArray[j];
+                    dataArray[j] = dataArray[j+1];
+                    dataArray[j+1] = temp ;
+                }
+            }
+        }
 
+
+
+
+        //! Printing data After Sorting
+
+        System.out.println("List After Sorting");
+        for(int item : dataArray ){
+            System.out.print(item + "");
+        }
     }
 
 
-            
+    public static void main(String[] args) throws Exception {
 
+        // ? initialize array for Search testing
+        int[] searchData = new int[]{1, 2, 3, 4, 5};
+
+        // ? initialize array for Sorting testing
+        int[] sortData = new int[]{12, 3, 5, 9, 8};
+
+
+        // ? Call Linear Search Method
+        // doLinearSearch(searchData,2);
+
+         // ? call Binary search Method
+         // doBinarySearch(searchData,9);
+
+        // ? call Bubble Sort Method
+        doBubbleSort(sortData);
+
+
+    }
 }
